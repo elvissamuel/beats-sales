@@ -53,15 +53,49 @@ function App() {
   //   }));
   // };
 
+  // const addToTCart = (obj, quantity) => {
+  //   setCartItems((prev) => {
+  //     const itemExist = prev.find((item) => item.id === obj.id);
+
+  //     if(itemExist){
+  //       return 
+  //     }
+  //   }[
+  //     ...prev,
+  //     {
+  //       ...obj,
+  //       quantity,
+  //     },
+  //   ]);
+  // };
+
   const addToTCart = (obj, quantity) => {
-    setCartItems((prev) => [
-      ...prev,
-      {
-        ...obj,
-        quantity,
-      },
-    ]);
+    setCartItems((prev) => {
+      // Check if the item with the same ID already exists in the cart
+      const existingItem = prev.find((item) => item.id === obj.id);
+  
+      if (existingItem) {
+        // If the item exists, update its quantity by adding the new quantity
+        return prev.map((item) => {
+          if (item.id === obj.id) {
+            return { ...item, quantity: item.quantity + quantity };
+          }
+          return item;
+        });
+      } else {
+        // If the item does not exist, add it to the cart
+        return [
+          ...prev,
+          {
+            ...obj,
+            quantity,
+          },
+        ];
+      }
+    });
   };
+  
+
   const removeFromCart = (item) => {
     setCartItems(() => cartItems.filter((p) => p.id !== item));
   };

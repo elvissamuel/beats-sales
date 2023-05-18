@@ -26,7 +26,7 @@ function SpeakerProduct() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </span>
-          <Link to="/speaker2">
+          <Link to="/6">
             <Button name="SEE PRODUCT" style="tetiaryButton" />
           </Link>
         </div>
@@ -34,7 +34,7 @@ function SpeakerProduct() {
 
       <div className="speaker_product_container2">
         <h2>ZX7 SPEAKER</h2>
-        <Link to="/speaker1">
+        <Link to="/5">
           <Button name="SEE PRODUCT" style="secondaryButton" />
         </Link>
       </div>
@@ -48,7 +48,7 @@ function SpeakerProduct() {
         <div className="speaker_product_container4">
           <div className="container4">
             <h2>YX1 EARPHONES</h2>
-            <Link to="/earphone1">
+            <Link to="/1">
               <Button name="SEE PRODUCT" style="secondaryButton" />
             </Link>
           </div>

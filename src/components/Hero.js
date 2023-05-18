@@ -22,7 +22,7 @@ function Hero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </span>
-          <Link to="/headphone01">
+          <Link to="/4">
             <Button name="See Product" style="primaryButton" />
           </Link>
         </div>

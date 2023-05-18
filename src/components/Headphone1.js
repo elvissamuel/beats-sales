@@ -20,6 +20,10 @@ function Headphone1({ product }) {
     window.scrollTo(0, 0);
   }, []);
 
+  const prevPage = () => {
+    window.history.back(); // Go back to the previous page
+  };
+
   const { cartItems, addToCart, inputValue, handleInput, addToTCart } =
     useContext(CartContext);
   const myId = product.id;
@@ -29,7 +33,7 @@ function Headphone1({ product }) {
   return (
     <div className="Headphone1">
       <div className="headphone1_container">
-        <Link className="goBack_btn">Go Back</Link>
+        {/* <button onclick={prevPage} className="goBack_btn">Go Back</button> */}
 
         <div className="product">
           <div className="product_img">
@@ -117,21 +121,21 @@ function Headphone1({ product }) {
         <div className="subProduct">
           <SubProduct
             image={window.innerWidth < 768 ? product.others[0].image.mobile : window.innerWidth > 1100 ? product.others[0].image.desktop : product.others[0].image.tablet }
-            productName={product.others[0].name}
+            productName={product.others[0].name} page={`/${product.id }`}
           />
           <SubProduct
             image={window.innerWidth < 768 ? product.others[1].image.mobile : window.innerWidth > 1100 ? product.others[1].image.desktop : product.others[1].image.tablet}
-            productName={product.others[1].name}
+            productName={product.others[1].name} page={`/${product.id}`}
           />
           <SubProduct
             image={window.innerWidth < 768 ? product.others[2].image.mobile : window.innerWidth > 1100 ? product.others[2].image.desktop : product.others[2].image.tablet}
-            productName={product.others[2].name}
+            productName={product.others[2].name} page={`/${product.id}`}
           />
         </div>
         <div className="subSection">
-          <SubSection productImg={headphone} productName="HEADPHONES" />
-          <SubSection productImg={speaker} productName="SPEAKERS" />
-          <SubSection productImg={earphone} productName="EARPHONES" />
+          <SubSection productImg={headphone} productName="HEADPHONES" link="/headphones" />
+          <SubSection productImg={speaker} productName="SPEAKERS" link="/speakers" />
+          <SubSection productImg={earphone} productName="EARPHONES" link="/earphones" />
         </div>
         <AudioGearAd />
         <Footer />

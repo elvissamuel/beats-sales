@@ -1,8 +1,9 @@
 import React from "react";
 import "./SubProduct.scss";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
-function SubProduct({ image, productName }) {
+function SubProduct({ image, productName, page }) {
   return (
     <div className="SubProduct">
       <div className="subproduct_container">
@@ -10,7 +11,9 @@ function SubProduct({ image, productName }) {
           <img src={image} alt="" />
         </div>
         <h2>{productName}</h2>
-        <Button name="SEE PRODUCT" style="primaryButton" />
+        <Link to={page}>
+          <Button name="SEE PRODUCT" style="primaryButton" />
+        </Link>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ function Cart() {
   console.log("cart:", cartItems);
 
   const sumPrice = (count, obj) => {
-    return count + obj.price;
+    return count + (obj.price * obj.quantity);
   };
 
   const total = cartItems.reduce(sumPrice, 0);
@@ -30,6 +30,8 @@ function Cart() {
           const newProductName = product.name.split(" ");
           const productSubName = newProductName[0];
 
+          const itemTotalPrice = product.price * product.quantity; 
+
           // const price = product.price;
 
           return (
@@ -40,7 +42,7 @@ function Cart() {
                 </div>
                 <div className="productDesc">
                   <span className="pname">{productSubName}</span>
-                  <span className="pprice">${product.price}</span>
+                  <span className="pprice">${itemTotalPrice}</span>
                 </div>
               </td>
               <td className="inputBox">

@@ -8,7 +8,7 @@ import { CartContext } from "./CartContextProvider";
 function Navbar() {
   const [click, setClick] = useState(false);
 
-  const{cartClick, handleCartClick, closeCart} = useContext(CartContext)
+  const{cartClick, handleCartClick, closeCart, cartItems} = useContext(CartContext)
 
   const handleClick = () => {
     setClick(!click);
@@ -59,7 +59,11 @@ function Navbar() {
           </Link>
         </div>
 
-        <i className="fas fa-cart-plus" onClick={handleCartClick} />
+        <div className="cartBox">
+          {cartItems.length >= 1 && <span className="itemNo">{cartItems.length}</span>}
+          <i className="fas fa-cart-plus" onClick={handleCartClick} />
+        </div>
+
       </div>
       <div className={cartClick ? "mayCartOpen" : "myCart"}>
         <Cart />

@@ -99,6 +99,7 @@ function App() {
   const removeFromCart = (item) => {
     setCartItems(() => cartItems.filter((p) => p.id !== item));
   };
+  
   const contextValue = {
     cartItems,
     removeFromCart,

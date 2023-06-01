@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, HashRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
 import Headphones from "./components/pages/Headphones";
@@ -114,7 +114,7 @@ function App() {
   return (
     <div className="App">
       <CartContext.Provider value={contextValue}>
-        <Router>
+        <HashRouter basename="/">
           <Navbar />
           {/* <Headphone1 /> */}
           <Routes>
@@ -140,7 +140,7 @@ function App() {
               );
             })}
           </Routes>
-        </Router>
+        </HashRouter>
       </CartContext.Provider>
     </div>
   );
